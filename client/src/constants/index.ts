@@ -1,3 +1,4 @@
 import PATH from './path';
+import THEME from './theme';
 
-export { PATH };
+export { PATH, THEME };
