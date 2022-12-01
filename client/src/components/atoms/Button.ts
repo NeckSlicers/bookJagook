@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
+import { THEME } from '../../constants';
 
 type ButtonProps = {
   buttonType?: 'cancel';
 };
 
 export const Button = styled.button<ButtonProps>`
-  background-color: #99a799;
+  background-color: ${THEME.light};
   color: #fff;
   border: none;
   padding: 0.5em 1em;
@@ -15,12 +16,15 @@ export const Button = styled.button<ButtonProps>`
 
   &:hover {
     text-decoration: underline;
+    background-color: ${THEME.normalText};
   }
 
   ${({ buttonType }) =>
     buttonType === 'cancel' &&
     css`
       background-color: transparent;
-      color: #0065ff;
+      color: ${THEME.light};
+      border: 1px solid ${THEME.light};
+      box-shadow: 1px 1px 1px ${THEME.light};
     `}
 `;

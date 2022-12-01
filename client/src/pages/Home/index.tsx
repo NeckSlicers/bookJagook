@@ -1,4 +1,10 @@
-import { Layout, Container, Button, Header } from '../../components/index';
+import {
+  Layout,
+  Container,
+  Button,
+  Paragraph,
+  Header,
+} from '../../components/index';
 
 import Modal from '../../components/molecules/Modal';
 
@@ -7,9 +13,15 @@ function Home() {
     <Layout>
       <Header />
       <Container>
-        <Button>버튼</Button>
-        <Button buttonType="cancel">버튼</Button>
+        <Button>확인</Button>
+        <Button buttonType="cancel">취소</Button>
         <Modal />
+        <Paragraph>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nisi
+          unde aliquid incidunt tempora ut hic illum at, ducimus quidem. Sunt
+          dolore ipsa, quo tempora repellendus voluptate laudantium
+          exercitationem distinctio.
+        </Paragraph>
       </Container>
     </Layout>
   );
