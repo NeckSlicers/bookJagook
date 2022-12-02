@@ -48,10 +48,10 @@ export const NavItem = styled.li`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: ${THEME.light};
+    color: ${THEME.LIGHT};
 
     :hover {
-      color: ${THEME.strong};
+      color: ${THEME.STRONG};
     }
   }
 
@@ -69,10 +69,10 @@ export const MypageLogo = styled.div`
   svg {
     width: 1.5rem;
     height: 1.5rem;
-    color: ${THEME.light};
+    color: ${THEME.LIGHT};
 
     :hover {
-      color: ${THEME.strong};
+      color: ${THEME.STRONG};
     }
   }
 

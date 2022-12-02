@@ -20,7 +20,7 @@ function Header() {
   return (
     <SHeader>
       <Logo>
-        <img src={logoImage} alt="" />
+        <img src={logoImage} alt="logo" />
       </Logo>
       <Navbar>
         <NavMenus>

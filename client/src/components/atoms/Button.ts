@@ -6,25 +6,25 @@ type ButtonProps = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  background-color: ${THEME.light};
+  background-color: ${THEME.LIGHT};
   color: #fff;
   border: none;
   padding: 0.5em 1em;
-  border-radius: ${THEME.radius};
+  border-radius: ${THEME.RADIUS};
   font-size: 1rem;
   cursor: pointer;
 
   &:hover {
     text-decoration: underline;
-    background-color: ${THEME.medium};
+    background-color: ${THEME.MEDIUM};
   }
 
   ${({ buttonType }) =>
     buttonType === 'cancel' &&
     css`
       background-color: transparent;
-      color: ${THEME.light};
-      border: 1px solid ${THEME.light};
-      box-shadow: 1px 1px 1px ${THEME.light};
+      color: ${THEME.LIGHT};
+      border: 1px solid ${THEME.LIGHT};
+      box-shadow: 1px 1px 1px ${THEME.LIGHT};
     `}
 `;

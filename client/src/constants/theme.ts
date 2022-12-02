@@ -1,9 +1,9 @@
 const THEME = {
-  bgc: '#f0f6ee',
-  strong: '#22341c',
-  light: '#99A799',
-  medium: '#718371',
-  radius: '15px',
+  BGC: '#f0f6ee',
+  STRONG: '#22341c',
+  LIGHT: '#99A799',
+  MEDIUM: '#718371',
+  RADIUS: '15px',
 };
 
 export default THEME;

@@ -6,8 +6,8 @@ type InputProps = {
 };
 
 export const Input = styled.input<InputProps>`
-  border: 1px solid ${THEME.medium};
-  border-radius: ${THEME.radius};
+  border: 1px solid ${THEME.MEDIUM};
+  border-radius: ${THEME.RADIUS};
   width: 300px;
   height: 35px;
 

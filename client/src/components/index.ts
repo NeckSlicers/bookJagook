@@ -17,7 +17,7 @@ export const Layout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${THEME.bgc};
+  background-color: ${THEME.BGC};
 `;
 
 export const Container = styled.div`
@@ -29,5 +29,5 @@ export const Container = styled.div`
   height: max-content;
   max-width: 1330px;
   padding: 0 160px;
-  border-radius: ${THEME.radius};
+  border-radius: ${THEME.RADIUS};
 `;
