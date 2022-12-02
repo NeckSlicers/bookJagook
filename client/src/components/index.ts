@@ -4,10 +4,12 @@ import { THEME } from '../constants';
 // atoms
 import { Button } from './atoms/Button';
 import { Paragraph } from './atoms/Text';
+import { Input } from './atoms/Input';
 // molecules
 import { Header } from './molecules/Header';
 
-export { Button, Paragraph, Header };
+// 전체 export
+export { Button, Input, Paragraph, Header };
 
 export const Layout = styled.div`
   width: 100%;
@@ -27,5 +29,5 @@ export const Container = styled.div`
   height: max-content;
   max-width: 1330px;
   padding: 0 160px;
-  border-radius: 15px;
+  border-radius: ${THEME.radius};
 `;

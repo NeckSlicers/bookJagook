@@ -10,13 +10,13 @@ export const Button = styled.button<ButtonProps>`
   color: #fff;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 0.5em;
-  font-size: 1.1rem;
+  border-radius: ${THEME.radius};
+  font-size: 1rem;
   cursor: pointer;
 
   &:hover {
     text-decoration: underline;
-    background-color: ${THEME.normalText};
+    background-color: ${THEME.medium};
   }
 
   ${({ buttonType }) =>
