@@ -1,17 +1,14 @@
 import styled from 'styled-components';
+import { THEME } from '../../../constants';
+// import { ModalProps } from '../../../types';
 
-export const ModalContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vh;
-  height: 100vw;
-`;
+// * 1. 전역에서 재사용 가능한 모달 스타일링
 
-// * 모달 팝업 뒷배경
+/** 모달 팝업 뒷배경 div 태그입니다. */
 export const ModalBackdrop = styled.div`
   position: absolute;
+  top: 0;
+  right: 0;
   width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -20,22 +17,25 @@ export const ModalBackdrop = styled.div`
   align-items: center;
 `;
 
+/** 모달 내용 전체 화면영역 div 태그입니다. */
 export const ModalView = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3rem;
+  width: max-content;
+  height: max-content;
 
-  /* width: max-content; */
-  /* height: max-content; */
-
-  width: 500px; // 확인용 임시 값
-  height: 800px; // 확인용 임시 값
-
-  background-color: #fff;
+  background-color: ${THEME.CONTENTBG};
+  border-radius: ${THEME.RADIUS};
   text-align: center;
   border-radius: 7px;
   font-size: 14px;
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
 
   > .closingBtn {
     color: black;
@@ -46,4 +46,23 @@ export const ModalView = styled.div`
     background-color: transparent;
     cursor: pointer;
   }
+`;
+
+/** 재사용 가능한 등록, 취소 버튼 위치지정용 wrap하는 div 태그입니다. */
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 1rem;
+`;
+
+// * 2. 나의 서재용 모달 스타일링
+
+/** 나의서재-독후감쓰기 전용 모달의 컨테이너 div 태그입니다.  */
+export const ReviewModal = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
