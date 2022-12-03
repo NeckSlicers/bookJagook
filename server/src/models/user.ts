@@ -1,17 +1,15 @@
 import { Schema, model } from 'mongoose';
 
-/* 스키마 테스트 */
-
 interface IUser {
-  name: string;
-  age: number;
-  address: string;
+  nickName: string;
+  email: number;
+  avatar: string | null;
 }
 
 const userSchema = new Schema<IUser>({
-  name: { type: String, required: true },
-  age: { type: Number, required: true },
-  address: { type: String, required: true },
+  nickName: { type: String, required: true },
+  email: { type: Number, required: true },
+  avatar: { type: String, default: null },
 });
 
 const User = model<IUser>('users', userSchema);
