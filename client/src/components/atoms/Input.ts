@@ -27,7 +27,11 @@ export const Input = styled.input<InputProps>`
   ${({ inputType }) =>
     inputType === 'review' &&
     css`
-      width: 100%;
+      width: 800px;
       height: 300px; // 확인용 임시값
+
+      @media screen and (max-width: 479px) {
+        width: 100%;
+      }
     `}
 `;
