@@ -9,6 +9,8 @@ import {
   BookRate,
 } from './styles.Books';
 
+import { Modal } from '../../../components';
+
 function Books() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,6 +37,7 @@ function Books() {
             <AiOutlineStar />
           </BookRate>
         </BookInfo>
+        <Modal modalType="review" />
       </BookCard>
     </BookCards>
   );
