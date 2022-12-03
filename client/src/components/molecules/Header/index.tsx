@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <SHeader>
-      <Logo>
+      <Logo onClick={() => navigate(PATH.HOME)}>
         <img src={logoImage} alt="logo" />
       </Logo>
       <Navbar>
