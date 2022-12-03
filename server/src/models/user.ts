@@ -12,6 +12,6 @@ const userSchema = new Schema<IUser>({
   avatar: { type: String, default: null },
 });
 
-const User = model<IUser>('users', userSchema);
+const User = model<IUser>('Users', userSchema);
 
 export { User, IUser };
