@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { THEME } from '../../../constants';
 
 /** 나의 서재 전체 도서 목록 컨테이너 section 태그입니다. */
 export const BookCards = styled.section`
@@ -22,6 +23,8 @@ export const BookCard = styled.article`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ${THEME.CONTENTBG};
+  cursor: pointer;
 `;
 
 /** 개별 도서 책 표지 img 태그입니다. */
@@ -61,5 +64,4 @@ export const BookContent = styled.div`
   line-height: 1.5;
   font-size: 0.9em;
   padding: 15px;
-  background-color: #fafafa;
 `;
