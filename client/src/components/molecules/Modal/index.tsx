@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 // import { Container } from '../../index';
 import { Button } from '../../atoms/Button';
-import { ModalBackdrop, ModalView } from './styles.Modal';
+import {
+  ModalBackdrop,
+  ModalView,
+  ReviewModal,
+  ButtonWrapper,
+} from './styles.Modal';
+import { ModalProps } from '../../../types';
+import { Input } from '../../atoms';
 
-function Modal() {
+function Modal({ modalType }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModalHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -15,7 +22,7 @@ function Modal() {
   return (
     <>
       <Button onClick={openModalHandler}>
-        {isOpen ? 'Opened!' : 'Open Modal'}
+        {modalType === 'review' && '독후감 쓰기'}
       </Button>
       {isOpen ? (
         <ModalBackdrop onClick={() => openModalHandler}>
@@ -27,14 +34,16 @@ function Modal() {
             >
               x
             </Button>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-                omnis! Consectetur, voluptatem delectus nostrum molestias dolore
-                similique. Unde asperiores, quod eos dicta ipsum voluptas
-                delectus, facere nisi, odio eveniet autem.
-              </p>
-            </div>
+            {modalType === 'review' && (
+              <ReviewModal>
+                <h2>독후감쓰기</h2>
+                <Input inputType="review" />
+                <ButtonWrapper>
+                  <Button buttonType="cancel">취소</Button>
+                  <Button>등록</Button>
+                </ButtonWrapper>
+              </ReviewModal>
+            )}
           </ModalView>
         </ModalBackdrop>
       ) : null}
