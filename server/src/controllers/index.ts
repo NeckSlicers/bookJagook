@@ -1,3 +1,4 @@
 import { userController } from './userController';
+import { bookListController } from './bookListController';
 
-export { userController };
+export { userController, bookListController };
