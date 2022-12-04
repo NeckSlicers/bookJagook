@@ -24,8 +24,6 @@ app.use(PATH.BOOK.ROOT, bookRouter);
 app.use(PATH.MYBOOKLIST.ROOT, mybookListRouter);
 app.use(PATH.MYBOOK.ROOT, mybookRouter);
 
-// axios.get(REQUEST.NEW_BOOK_LIST(5, 10)).then((res) => console.log(res.data));
-
 app.listen(PORT, async () => {
   const response = await mongoose.connect(process.env.MOGODB_KEY as string);
   if (response) console.log('DB Connent');
