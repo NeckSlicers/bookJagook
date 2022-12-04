@@ -3,7 +3,13 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { PATH } from './api';
-import { userRouter } from './routes';
+import {
+  userRouter,
+  bookListRouter,
+  bookRouter,
+  mybookListRouter,
+  mybookRouter,
+} from './routes';
 
 const PORT = 8080;
 const app = exrpess();
@@ -13,6 +19,12 @@ app.use(morgan('tiny'));
 app.use(exrpess.urlencoded({ extended: false }));
 app.use(exrpess.json());
 app.use(PATH.USER, userRouter);
+app.use(PATH.BOOKLIST.ROOT, bookListRouter);
+app.use(PATH.BOOK.ROOT, bookRouter);
+app.use(PATH.MYBOOKLIST.ROOT, mybookListRouter);
+app.use(PATH.MYBOOK.ROOT, mybookRouter);
+
+// axios.get(REQUEST.NEW_BOOK_LIST(5, 10)).then((res) => console.log(res.data));
 
 app.listen(PORT, async () => {
   const response = await mongoose.connect(process.env.MOGODB_KEY as string);
