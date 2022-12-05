@@ -22,7 +22,7 @@ function Home() {
           텍스트 지정용
         </Paragraph>
         <Input type="text" placeholder="도서 검색용. 기본값" />
-        <Input type="text" inputType="comment" placeholder="한줄평용" />
+        <Input type="text" inputType="review" placeholder="한줄평용" />
         <Input
           type="textarea"
           inputType="review"

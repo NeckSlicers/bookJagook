@@ -9,6 +9,7 @@ export const SHeader = styled.header`
   width: 100%;
   max-width: 1330px;
   padding: 1rem;
+  background-color: ${THEME.BGC};
 
   border-radius: 12px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);

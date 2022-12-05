@@ -7,13 +7,15 @@ import { Paragraph } from './atoms/Text';
 import { Input } from './atoms/Input';
 // molecules
 import { Header } from './molecules/Header';
+import { Modal } from './molecules';
 
 // 전체 export
-export { Button, Input, Paragraph, Header };
+export { Button, Input, Paragraph, Header, Modal };
 
 export const Layout = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,4 +32,8 @@ export const Container = styled.div`
   max-width: 1330px;
   padding: 0 160px;
   border-radius: ${THEME.RADIUS};
+
+  @media screen and (max-width: 479px) {
+    padding: 0;
+  }
 `;
