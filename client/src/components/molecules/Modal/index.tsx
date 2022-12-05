@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-// import { Container } from '../../index';
 import { Button } from '../../atoms/Button';
-import {
-  ModalBackdrop,
-  ModalView,
-  ReviewModal,
-  ButtonWrapper,
-} from './styles.Modal';
+import { ModalBackdrop, ModalView } from './styles.Modal';
 import { ModalProps } from '../../../types';
-import { Input } from '../../atoms';
+import ReportModal from './ReportModal';
+import ReviewModal from './ReviewModal';
 
 function Modal({ modalType }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +17,12 @@ function Modal({ modalType }: ModalProps) {
   return (
     <>
       <Button onClick={openModalHandler}>
-        {modalType === 'review' && '독후감 쓰기'}
+        {modalType === 'review' && (
+          <span>
+            별점, 한줄평 <br /> 등록하기
+          </span>
+        )}
+        {modalType === 'report' && '독후감 쓰기'}
       </Button>
       {isOpen ? (
         <ModalBackdrop onClick={() => openModalHandler}>
@@ -34,16 +34,8 @@ function Modal({ modalType }: ModalProps) {
             >
               x
             </Button>
-            {modalType === 'review' && (
-              <ReviewModal>
-                <h2>독후감쓰기</h2>
-                <Input inputType="review" />
-                <ButtonWrapper>
-                  <Button buttonType="cancel">취소</Button>
-                  <Button>등록</Button>
-                </ButtonWrapper>
-              </ReviewModal>
-            )}
+            {modalType === 'review' && <ReviewModal />}
+            {modalType === 'report' && <ReportModal />}
           </ModalView>
         </ModalBackdrop>
       ) : null}
