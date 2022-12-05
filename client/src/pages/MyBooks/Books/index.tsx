@@ -7,9 +7,10 @@ import {
   BookInfo,
   BookTitle,
   BookRate,
+  ReportView,
 } from './styles.Books';
-
-import { Modal } from '../../../components';
+import { ButtonWrapper } from '../../../components/molecules/Modal/styles.Modal';
+import { Input, Button, Modal } from '../../../components';
 
 function Books() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,15 @@ function Books() {
           {hover ? (
             <>
               <p>등록된 리뷰가 없습니다.</p>
-              <Modal modalType="review" />
+              <Modal modalType="review">
+                <div>
+                  <Input />
+                  <ButtonWrapper>
+                    <Button buttonType="cancel">취소</Button>
+                    <Button>확인</Button>
+                  </ButtonWrapper>
+                </div>
+              </Modal>
             </>
           ) : (
             <BookImg
@@ -56,7 +65,16 @@ function Books() {
         1. 등록한 독후감이 있으면 "작성한 독후감 보기" 없으면 현 모달(독후감 쓰기)
         2. 하단에 "수정", "삭제"
         */}
-        <Modal modalType="report" />
+        <Modal modalType="report">
+          <ReportView>
+            <h2>독후감쓰기</h2>
+            <Input inputType="report" />
+            <ButtonWrapper>
+              <Button buttonType="cancel">취소</Button>
+              <Button>등록</Button>
+            </ButtonWrapper>
+          </ReportView>
+        </Modal>
       </BookCard>
     </BookCards>
   );

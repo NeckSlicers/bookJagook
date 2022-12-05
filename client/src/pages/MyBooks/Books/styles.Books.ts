@@ -69,3 +69,11 @@ export const BookContent = styled.div`
   font-size: 0.9em;
   padding: 15px;
 `;
+
+export const ReportView = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

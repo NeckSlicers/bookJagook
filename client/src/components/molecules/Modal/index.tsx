@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '../../atoms/Button';
 import { ModalBackdrop, ModalView } from './styles.Modal';
 import { ModalProps } from '../../../types';
-import ReportModal from './ReportModal';
-import ReviewModal from './ReviewModal';
 
-function Modal({ modalType }: ModalProps) {
+function Modal({ modalType, children }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModalHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -34,8 +32,7 @@ function Modal({ modalType }: ModalProps) {
             >
               x
             </Button>
-            {modalType === 'review' && <ReviewModal />}
-            {modalType === 'report' && <ReportModal />}
+            {children}
           </ModalView>
         </ModalBackdrop>
       ) : null}
