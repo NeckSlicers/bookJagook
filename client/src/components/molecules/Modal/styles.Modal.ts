@@ -55,14 +55,3 @@ export const ButtonWrapper = styled.div`
   column-gap: 1rem;
   padding: 1rem;
 `;
-
-// * 2. 나의 서재용 모달 스타일링
-
-/** 나의서재-독후감쓰기 전용 모달의 컨테이너 div 태그입니다.  */
-export const ReviewModal = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
