@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { THEME } from '../../constants';
 
 type InputProps = {
-  inputType?: 'search' | 'comment' | 'review';
+  inputType?: 'search' | 'review' | 'report';
 };
 
 export const Input = styled.input<InputProps>`
@@ -20,12 +20,12 @@ export const Input = styled.input<InputProps>`
   }
 
   ${({ inputType }) =>
-    inputType === 'comment' &&
+    inputType === 'review' &&
     css`
       width: 100%;
     `}
   ${({ inputType }) =>
-    inputType === 'review' &&
+    inputType === 'report' &&
     css`
       width: 800px;
       height: 300px; // 확인용 임시값
