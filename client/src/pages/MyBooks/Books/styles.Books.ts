@@ -30,7 +30,6 @@ export const BookCard = styled.article`
 /** 개별 도서 책 표지 img 태그입니다. */
 export const BookImg = styled.img`
   width: 80%;
-  display: block;
 
   @media screen and (max-width: 479px) {
     width: max-content;
@@ -43,14 +42,19 @@ export const BookInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  width: 150px;
+  height: 150px;
+  padding: 0 0.5rem;
+
   @media screen and (max-width: 479px) {
-    width: max-content;
+    /* width: max-content; */
   }
 `;
 
 /** 개별 도서 책 제목 h4 태그입니다. */
-export const BookTitle = styled.h3``;
+export const BookTitle = styled.h3`
+  padding: 0.5rem;
+`;
 
 /** 개별 도서 별점영역을 감싸는 평점 추가 button 태그입니다. */
 export const BookRate = styled.button`
