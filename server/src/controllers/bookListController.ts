@@ -1,29 +1,6 @@
 import { Request, Response } from 'express';
 import { axios, REQUEST } from '../api';
-
-interface AladinBook {
-  isbn13: string;
-  cover: string;
-  link: string;
-  title: string;
-  author: string;
-  description: string;
-  publisher: string;
-  priceStandard: number;
-  priceSales: number;
-}
-
-interface BookItem {
-  id: string;
-  bookImg: string;
-  link: string;
-  title: string;
-  author: string;
-  description: string;
-  publisher: string;
-  priceStandard: number;
-  priceSales: number;
-}
+import { AladinBook, BookItem } from '../types';
 
 interface IBookList {
   totalPage: number;
@@ -103,10 +80,10 @@ const getBookList = async (req: Request, res: Response) => {
       return res.status(200).json(result);
     }
   } catch {
-    return res.status(500).send('서버를 확인해주세요.');
+    return res.status(404).send('서버를 확인해주세요.');
   }
 
-  return res.status(404).send('잘못된 요청이 존재합니다.');
+  return res.status(505).send('잘못된 요청이 존재합니다.');
 };
 
 const bookListController = {
