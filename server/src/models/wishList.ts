@@ -13,7 +13,18 @@ interface IWishList {
   priceSales: number; // priceSales
 }
 
-const wishListSchema = new Schema<IWishList>({});
+const wishListSchema = new Schema<IWishList>({
+  id: String,
+  userId: Number,
+  bookImg: String,
+  link: String,
+  title: String,
+  author: String,
+  description: String,
+  publisher: String,
+  priceStandard: Number,
+  priceSales: Number,
+});
 
 const WishList = model<IWishList>('WishLists', wishListSchema);
 
