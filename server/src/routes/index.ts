@@ -3,6 +3,7 @@ import { bookListRouter } from './bookList';
 import { bookRouter } from './book';
 import { mybookListRouter } from './mybookList';
 import { mybookRouter } from './mybook';
+import { wishListRouter } from './wishiList';
 
 export {
   userRouter,
@@ -10,4 +11,5 @@ export {
   bookRouter,
   mybookListRouter,
   mybookRouter,
+  wishListRouter,
 };
