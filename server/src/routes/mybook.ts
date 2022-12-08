@@ -23,8 +23,5 @@ router.get(PATH.MYBOOK.BOOKID, (req, res) =>
     report: '정말 좋은 책이였습니다 (...독후감 내용)',
   }),
 );
-router.post(PATH.MYBOOK.REPORT, (req, res) => res.send('성공'));
-router.patch(PATH.MYBOOK.REPORT, (req, res) => res.send('성공'));
-router.delete(PATH.MYBOOK.REPORT, (req, res) => res.send('성공'));
 
 export { router as mybookRouter };
