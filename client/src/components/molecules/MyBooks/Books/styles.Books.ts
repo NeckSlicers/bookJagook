@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { THEME } from '../../../constants';
+import { THEME } from '../../../../constants';
 
 /** 나의 서재 전체 도서 목록 컨테이너 section 태그입니다. */
 export const BookCards = styled.section`

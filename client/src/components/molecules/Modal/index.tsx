@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GrClose } from 'react-icons/gr';
 import { Button } from '../../atoms/Button';
 import { ModalBackdrop, ModalView } from './styles.Modal';
 import { ModalProps } from '../../../types';
@@ -7,7 +8,6 @@ function Modal({ modalType, children }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModalHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // TODO : isOpen의 상태를 변경하는 메소드를 구현합니다.
     e.stopPropagation();
     setIsOpen(!isOpen);
   };
@@ -30,7 +30,7 @@ function Modal({ modalType, children }: ModalProps) {
               className="closingBtn"
               onClick={openModalHandler}
             >
-              x
+              <GrClose />
             </Button>
             {children}
           </ModalView>
