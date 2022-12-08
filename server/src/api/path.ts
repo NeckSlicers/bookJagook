@@ -21,6 +21,9 @@ const PATH = {
     ROOT: '/wishList',
     BOOKID: '/:bookId',
   },
+  REPORT: {
+    ROOT: '/report',
+  },
 };
 
 export { PATH };

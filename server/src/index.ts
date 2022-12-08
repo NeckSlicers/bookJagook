@@ -10,6 +10,7 @@ import {
   mybookListRouter,
   mybookRouter,
   wishListRouter,
+  reportRouter,
 } from './routes';
 
 const PORT = 8080;
@@ -25,6 +26,7 @@ app.use(PATH.BOOK.ROOT, bookRouter);
 app.use(PATH.MYBOOKLIST.ROOT, mybookListRouter);
 app.use(PATH.MYBOOK.ROOT, mybookRouter);
 app.use(PATH.WISHLIST.ROOT, wishListRouter);
+app.use(PATH.REPORT.ROOT, reportRouter);
 
 app.listen(PORT, async () => {
   const response = await mongoose.connect(process.env.MOGODB_KEY as string);
