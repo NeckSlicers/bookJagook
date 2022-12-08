@@ -4,8 +4,8 @@ import { reportController } from '../controllers';
 
 const router = express();
 
-router.post(PATH.ROOT, reportController.createReport);
-router.patch(PATH.ROOT, reportController.updateReport);
-router.delete(PATH.ROOT, reportController.deleteReport);
+router.post(PATH.MYBOOK.REPORT, reportController.createReport);
+router.patch(PATH.MYBOOK.REPORT, reportController.updateReport);
+router.delete(PATH.MYBOOK.REPORT, reportController.deleteReport);
 
 export { router as reportRouter };
