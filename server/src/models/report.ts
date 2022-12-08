@@ -6,7 +6,11 @@ interface IReport {
   report: string;
 }
 
-const reportSchema = new Schema<IReport>({});
+const reportSchema = new Schema<IReport>({
+  id: String,
+  userId: Number,
+  report: String,
+});
 
 const Report = model<IReport>('Reports', reportSchema);
 export { Report, IReport };
