@@ -15,10 +15,7 @@ function Book() {
   const [isOpen, setIsOpen] = useState(false);
   const [hover, setHover] = useState(false);
 
-  const openModalHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    setIsOpen(!isOpen);
-  };
+  const onClickModalButton = () => setIsOpen(!isOpen);
 
   const hoverHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.type === 'mouseleave') return setHover(false);
@@ -31,7 +28,12 @@ function Book() {
         {hover ? (
           <>
             <p>등록된 리뷰가 없습니다.</p>
-            <Modal modalType="review">
+            <Button onClick={onClickModalButton}>별점/한줄평 등록하기</Button>
+            <Modal
+              isOpen={isOpen}
+              modalType="review"
+              onClose={onClickModalButton}
+            >
               <div>
                 <Input />
                 <ButtonWrapper>
@@ -52,7 +54,7 @@ function Book() {
       {/* TODO: 
     1. 등록된 평점에 따라 별점 변경되도록 로직 추가 
     */}
-      <BookRate type="button" onClick={openModalHandler}>
+      <BookRate type="button" onClick={onClickModalButton}>
         <AiOutlineStar />
         <AiOutlineStar />
         <AiOutlineStar />
@@ -63,7 +65,14 @@ function Book() {
   1. 등록한 독후감이 있으면 "작성한 독후감 보기" 없으면 현 모달(독후감 쓰기)
   2. 하단에 "수정", "삭제"
   */}
-      <Modal modalType="report">
+
+      <Modal
+        isOpen={isOpen}
+        modalType="report"
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      >
         <ReportView>
           <h2>독후감쓰기</h2>
           <Input inputType="report" />
