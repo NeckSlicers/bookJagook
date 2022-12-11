@@ -1,11 +1,11 @@
 import Book from './Book';
-import { BookCards } from './styles.Books';
+import { BooksLayout } from './styles';
 
 function Books() {
   return (
-    <BookCards>
+    <BooksLayout>
       <Book />
-    </BookCards>
+    </BooksLayout>
   );
 }
 
