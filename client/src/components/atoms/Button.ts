@@ -3,6 +3,11 @@ import { THEME } from '../../constants';
 
 type ButtonProps = {
   buttonType?: 'cancel';
+  ref?:
+    | ((instance: HTMLButtonElement | null) => void)
+    | React.RefObject<HTMLButtonElement>
+    | null
+    | undefined;
 };
 
 export const Button = styled.button<ButtonProps>`

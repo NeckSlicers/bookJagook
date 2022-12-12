@@ -1,5 +1,7 @@
-/** review: 독후감, rate: 별점/한줄평 */
+/** review: 별점/한줄평, report: 독후감 */
 export type ModalProps = {
   modalType?: 'review' | 'report';
   children?: React.ReactNode;
+  onClose: () => void;
+  isOpen: boolean;
 };
