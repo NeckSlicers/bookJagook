@@ -22,7 +22,7 @@ export const Input = styled.input<InputProps>`
   ${({ inputType }) =>
     inputType === 'review' &&
     css`
-      width: 100%;
+      width: 350px;
     `}
   ${({ inputType }) =>
     inputType === 'report' &&

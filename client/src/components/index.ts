@@ -30,7 +30,7 @@ export const Container = styled.div`
   align-items: center;
   height: max-content;
   max-width: 1330px;
-  padding: 0 160px;
+  padding: 30px 160px 0 160px;
   border-radius: ${THEME.RADIUS};
 
   @media screen and (max-width: 479px) {

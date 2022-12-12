@@ -1,43 +1,31 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { GrClose } from 'react-icons/gr';
 import { Button } from '../../atoms/Button';
 import { ModalBackdrop, ModalView } from './styles.Modal';
 import { ModalProps } from '../../../types';
+import ModalContainer, { PortalTarget } from './ModalContainer';
 
-function Modal({ modalType, children }: ModalProps) {
-  const [isOpen, setIsOpen] = useState(false);
+function Modal({ isOpen, onClose, children }: ModalProps) {
+  const outsideRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
-  const openModalHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // TODO : isOpen의 상태를 변경하는 메소드를 구현합니다.
-    e.stopPropagation();
-    setIsOpen(!isOpen);
+  const closeModal = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (e.target === outsideRef.current) {
+      onClose();
+    }
   };
 
-  return (
-    <>
-      <Button onClick={openModalHandler}>
-        {modalType === 'review' && (
-          <span>
-            별점, 한줄평 <br /> 등록하기
-          </span>
-        )}
-        {modalType === 'report' && '독후감 쓰기'}
-      </Button>
-      {isOpen ? (
-        <ModalBackdrop onClick={() => openModalHandler}>
-          <ModalView onClick={(e) => e.stopPropagation()}>
-            <Button
-              type="button"
-              className="closingBtn"
-              onClick={openModalHandler}
-            >
-              x
-            </Button>
-            {children}
-          </ModalView>
-        </ModalBackdrop>
-      ) : null}
-    </>
-  );
+  return isOpen ? (
+    <ModalContainer target={PortalTarget.MODAL}>
+      <ModalBackdrop ref={outsideRef} onClick={closeModal}>
+        <ModalView>
+          <Button type="button" className="closingBtn" onClick={onClose}>
+            <GrClose />
+          </Button>
+          {children}
+        </ModalView>
+      </ModalBackdrop>
+    </ModalContainer>
+  ) : null;
 }
 
 export default Modal;

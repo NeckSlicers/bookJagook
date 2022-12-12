@@ -1,6 +1,6 @@
 import { Layout, Container, Header } from '../../components';
 
-import Books from './Books';
+import Books from '../../components/molecules/MyBooks/Books';
 
 function MyBooks() {
   return (
