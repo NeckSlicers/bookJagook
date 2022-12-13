@@ -56,14 +56,17 @@ export const KakaoSignInBtn = styled(Button)`
   align-items: center;
   gap: 5px;
   width: 300px;
-  color: black;
 
   img {
     width: 5%;
     margin: 3px;
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   @media screen and (max-width: 479px) {
-    /* width: 150px; */
   }
 `;
