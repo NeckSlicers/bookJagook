@@ -13,7 +13,7 @@ interface IMyBook {
   priceSales: number; // priceSales
   star: number;
   commnet: string;
-  revier: string;
+  review: string;
 }
 
 const myBookSchema = new Schema<IMyBook>({});

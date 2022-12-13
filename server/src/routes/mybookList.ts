@@ -1,7 +1,7 @@
-import exprss from 'express';
+import express from 'express';
 import { PATH } from '../api';
 
-const router = exprss();
+const router = express();
 
 router.get(PATH.ROOT, (req, res) =>
   res.json({

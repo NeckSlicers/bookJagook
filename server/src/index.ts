@@ -29,7 +29,7 @@ app.use(PATH.WISHLIST.ROOT, wishListRouter);
 app.use(PATH.MYBOOK.ROOT, reportRouter);
 
 app.listen(PORT, async () => {
-  const response = await mongoose.connect(process.env.MOGODB_KEY as string);
+  const response = await mongoose.connect(process.env.MONGODB_KEY as string);
   if (response) console.log('DB Connent');
   console.log(`http://localhost:${PORT}`);
 });

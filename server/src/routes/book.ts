@@ -1,8 +1,8 @@
-import exprss from 'express';
+import express from 'express';
 import { PATH } from '../api';
 import { bookController } from '../controllers';
 
-const router = exprss();
+const router = express();
 
 router.get(PATH.BOOK.BOOKID, bookController.getBook);
 router.post(PATH.BOOK.REVIEW, bookController.createBook);
