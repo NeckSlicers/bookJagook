@@ -1,3 +1,6 @@
+import { GiBookshelf } from 'react-icons/gi';
+import { ImCreditCard } from 'react-icons/im';
+import { FiTrash2 } from 'react-icons/fi';
 import {
   WishCardContainer,
   CoverInfoWrapper,
@@ -37,9 +40,24 @@ function WishCard() {
         </BookInfoWrapper>
       </CoverInfoWrapper>
       <ButtonWrapper>
-        <WishCardButton>구매하기</WishCardButton>
-        <WishCardButton>나의 서재에 담기</WishCardButton>
-        <WishCardButton>삭제</WishCardButton>
+        <WishCardButton>
+          <span>구매하기</span>
+          <div>
+            <ImCreditCard /> 구매
+          </div>
+        </WishCardButton>
+        <WishCardButton>
+          <span>나의 서재에 담기</span>
+          <div>
+            <GiBookshelf /> 담기
+          </div>
+        </WishCardButton>
+        <WishCardButton>
+          <span>삭제</span>
+          <div>
+            <FiTrash2 /> 삭제
+          </div>
+        </WishCardButton>
       </ButtonWrapper>
     </WishCardContainer>
   );
