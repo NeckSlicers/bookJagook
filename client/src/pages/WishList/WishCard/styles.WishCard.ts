@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../../components';
+import { THEME } from '../../../constants';
 
 export const WishCardContainer = styled.div`
   display: flex;
@@ -11,6 +12,10 @@ export const WishCardContainer = styled.div`
   width: auto;
   @media screen and (max-width: 480px) {
     flex-direction: column;
+  }
+  :hover {
+    transition: all 0.2s linear;
+    border: 1px solid ${THEME.MEDIUM};
   }
 `;
 
@@ -62,9 +67,9 @@ export const Description = styled.p`
   -webkit-line-clamp: 3;
   font-size: 14px;
   color: grey;
-  @media screen and (max-width: 480px) {
+  /* @media screen and (max-width: 480px) {
     display: none;
-  }
+  } */
 `;
 
 export const ButtonWrapper = styled.div`
@@ -83,8 +88,20 @@ export const ButtonWrapper = styled.div`
 export const WishCardButton = styled(Button)`
   width: 140px;
   font-size: 14px;
+  > div {
+    display: none;
+  }
   @media screen and (max-width: 480px) {
+    width: auto;
     font-size: 12px;
-    width: 110px;
+    > span {
+      display: none;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
 `;
