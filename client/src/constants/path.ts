@@ -3,6 +3,7 @@ const PATH = {
   WISHLIST: '/wishlist',
   MYBOOKS: '/mybooks',
   MYPAGE: '/mypage',
+  LOGIN: '/login',
 };
 
 export default PATH;
