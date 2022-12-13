@@ -2,6 +2,7 @@ import exrpess from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import { PATH } from './api';
 import {
   userRouter,
@@ -20,6 +21,13 @@ dotenv.config();
 app.use(morgan('tiny'));
 app.use(exrpess.urlencoded({ extended: false }));
 app.use(exrpess.json());
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: true,
+  }),
+);
 app.use(PATH.USER, userRouter);
 app.use(PATH.BOOKLIST.ROOT, bookListRouter);
 app.use(PATH.BOOK.ROOT, bookRouter);
