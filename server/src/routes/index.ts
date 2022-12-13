@@ -5,6 +5,7 @@ import { mybookListRouter } from './mybookList';
 import { mybookRouter } from './mybook';
 import { wishListRouter } from './wishiList';
 import { reportRouter } from './report';
+import { authRouter } from './auth';
 
 export {
   userRouter,
@@ -14,4 +15,5 @@ export {
   mybookRouter,
   wishListRouter,
   reportRouter,
+  authRouter,
 };

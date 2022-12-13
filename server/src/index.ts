@@ -1,4 +1,4 @@
-import exrpess from 'express';
+import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -12,15 +12,16 @@ import {
   mybookRouter,
   wishListRouter,
   reportRouter,
+  authRouter,
 } from './routes';
 
 const PORT = 8080;
-const app = exrpess();
+const app = express();
 dotenv.config();
 
 app.use(morgan('tiny'));
-app.use(exrpess.urlencoded({ extended: false }));
-app.use(exrpess.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(
   cors({
     origin: 'http://localhost:3000',
@@ -35,6 +36,7 @@ app.use(PATH.MYBOOKLIST.ROOT, mybookListRouter);
 app.use(PATH.MYBOOK.ROOT, mybookRouter);
 app.use(PATH.WISHLIST.ROOT, wishListRouter);
 app.use(PATH.MYBOOK.ROOT, reportRouter);
+app.use('/auth', authRouter);
 
 app.listen(PORT, async () => {
   const response = await mongoose.connect(process.env.MONGODB_KEY as string);

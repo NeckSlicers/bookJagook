@@ -56,6 +56,7 @@ export const KakaoSignInBtn = styled(Button)`
   align-items: center;
   gap: 5px;
   width: 300px;
+  color: black;
 
   img {
     width: 5%;

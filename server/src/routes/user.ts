@@ -5,7 +5,7 @@ import { userController } from '../controllers';
 
 const router = express();
 
-router.get('/auth/kakao', userController.getUser);
-router.post('/auth/kakao', userController.createUser);
+router.get('/', userController.getUser);
+router.post('/', userController.createUser);
 
 export { router as userRouter };
