@@ -3,7 +3,7 @@ const PATH = {
   WISHLIST: '/wishlist',
   MYBOOKS: '/mybooks',
   MYPAGE: '/mypage',
-  LOGIN: '/login',
+  REGISTER: '/register',
   REDIRECT: 'http://localhost:3000/auth/kakao/callback',
 };
 

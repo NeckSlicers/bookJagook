@@ -2,6 +2,6 @@ import Home from './Home';
 import WishList from './WishList';
 import MyBooks from './MyBooks';
 import Mypage from './Mypage';
-import Login from './Login';
+import Register from './Register';
 
-export { Home, WishList, MyBooks, Mypage, Login };
+export { Home, WishList, MyBooks, Mypage, Register };

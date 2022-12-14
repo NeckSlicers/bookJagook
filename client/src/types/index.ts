@@ -1,3 +1,4 @@
+import { FormProps } from './form';
 import { ModalProps } from './modals';
 
-export type { ModalProps };
+export type { ModalProps, FormProps };
