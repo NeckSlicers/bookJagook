@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 require('dotenv').config();
 const path = require('path');
 const cors = require('cors');
@@ -37,7 +38,6 @@ mongoose
   .then(() => {
     console.log('mongoDB 연결됨');
   });
-app.use('/uploads', express.static('uploads')); // 클라이언트에서 서버의 정적 파일에 접근할 수 있도록
 
 // * 2.1 회원가입 요청의 응답
 app.post('/users/signup', (req, res) => {
@@ -116,7 +116,11 @@ app.post('/users/signin', (req, res) => {
   });
 });
 
-// * 3. 위시리스트 핸들러
+// * 3. 도서 검색 핸들러
+// ...ing
+
+// * 4. 위시리스트 핸들러
+// 4.1 GET - 위시리스트 목록 조회
 app.get('/wishlist', auth, async (req, res) => {
   try {
     const data = await Wishlist.find({ username });
@@ -138,6 +142,7 @@ app.get('/wishlist', auth, async (req, res) => {
   }
 });
 
+// 4.2 POST - 위시리스트에 도서 추가
 app.post('/wishlist', auth, async (req, res) => {
   const result = { ...req.body, username };
   try {
@@ -149,6 +154,7 @@ app.post('/wishlist', auth, async (req, res) => {
   }
 });
 
+// 4.3 DELETE - 위시리스트에서 삭제
 app.delete('/wishlist', auth, async (req, res) => {
   const { bookId } = req.params;
   try {
@@ -162,3 +168,18 @@ app.delete('/wishlist', auth, async (req, res) => {
 app.listen(PORT, () => {
   console.log(`${PORT}번 포트로 서버 실행중`);
 });
+
+// * 5. 나의서재
+// 5.1 GET - 나의서재 도서목록 조회
+app.get('/mybook', auth, async (req, res) => {
+  console.log(req.body);
+});
+// 4.2 POST - 나의서재에 도서 추가
+app.post('/mybook', auth, async (req, res) => {
+  console.log(req.body);
+});
+// 5.3 DELETE - 나의서재에서 도서 삭제
+
+// * 6. 리뷰 - 별점/한줄평
+
+// * 7. 독후감

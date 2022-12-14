@@ -24,6 +24,7 @@ export const handleSignin = async (data: {
 }) => {
   try {
     const response = await axios.post('/users/signin', data);
+    // console.log(document.cookie);
     return response;
   } catch (err) {
     if (axios.isAxiosError(err)) {
@@ -37,6 +38,7 @@ export const handleSignin = async (data: {
 export const handleLogout = async () => {
   try {
     const response = await axios.get('/users/logout');
+    localStorage.clear();
     return response;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data;

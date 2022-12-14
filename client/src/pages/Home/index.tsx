@@ -6,8 +6,12 @@ import BookList from './BookList';
 import SerchOption from './SerchOption';
 import TopContainer from './TopContainer';
 // import Modal from '../../components/molecules/Modal';
+import { getNewBookList } from '../../api';
 
 function Home() {
+  const res = getNewBookList(1, 10, 'book');
+  console.log(res);
+
   const tempListData = [
     {
       cover: `https://image.aladin.co.kr/product/4619/35/cover200/8932026564_1.jpg`,
