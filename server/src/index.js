@@ -9,6 +9,10 @@ const mongoose = require('mongoose');
 dotenv.config();
 
 const { User } = require('./models/User');
+const { Wishlist } = require('./models/Wishlist');
+const { Mybook } = require('./models/Mybook');
+const { Report } = require('./models/Report');
+const { Review } = require('./models/Review');
 
 // 인증 미들웨어
 const { auth } = require('./middleware/auth');
@@ -96,8 +100,6 @@ app.post('/users/signin', (req, res) => {
       isAuth: true,
       username: req.user.name,
       email: req.user.email,
-      role: req.user.role,
-      photoURL: req.user.photoURL,
     });
   });
 
@@ -112,6 +114,49 @@ app.post('/users/signin', (req, res) => {
       });
     });
   });
+});
+
+// * 3. 위시리스트 핸들러
+app.get('/wishlist', auth, async (req, res) => {
+  try {
+    const data = await Wishlist.find({ username });
+    const result = data.map(item => ({
+      id: item.id,
+      username: item.username,
+      bookImg: item.bookImg,
+      link: item.link,
+      title: item.title,
+      author: item.author,
+      description: item.description,
+      publisher: item.publisher,
+      priceStandard: item.priceStandard,
+      priceSales: item.priceSales,
+    }));
+    return res.status(200).json(result);
+  } catch {
+    return res.status(404).send('fail');
+  }
+});
+
+app.post('/wishlist', auth, async (req, res) => {
+  const result = { ...req.body, username };
+  try {
+    const WishlistDocument = new Wishlist(result);
+    await WishlistDocument.save();
+    return res.status(200).send('success');
+  } catch {
+    return res.status(404).send('fail');
+  }
+});
+
+app.delete('/wishlist', auth, async (req, res) => {
+  const { bookId } = req.params;
+  try {
+    await Wishlist.findOneAndDelete({ id: bookId });
+    return res.status(200).send('success');
+  } catch {
+    return res.status(404).send('fail');
+  }
 });
 
 app.listen(PORT, () => {
