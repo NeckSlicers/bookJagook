@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
 const myBookSchema = new mongoose.Schema({
-  id: string, // isbn13
-  userId: number,
-  bookImg: string, // cover
-  link: string, // link
-  title: string, // title
-  author: string, // author
-  description: string, // description
-  publisher: string, // publisher
-  priceStandard: number, // priceStandard
-  priceSales: number, // priceSales
-  star: number,
-  commnet: string,
-  review: string,
+  id: Number, // isbn13
+  username: String,
+  bookImg: String, // cover
+  link: String, // link
+  title: String, // title
+  author: String, // author
+  description: String, // description
+  publisher: String, // publisher
+  priceStandard: Number, // priceStandard
+  priceSales: Number, // priceSales
+  star: Number,
+  commnet: String,
+  review: String,
 });
 
 const Mybook = mongoose.model('Mybooks', myBookSchema);

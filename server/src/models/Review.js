@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  bookId: String,
-  nickName: String,
+  bookId: Number,
+  userame: String,
   comment: String,
   star: Number,
 });
