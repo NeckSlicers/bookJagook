@@ -52,10 +52,9 @@ function Kakao() {
       })
       .then((res) => {
         // TODO: 주소는 우리 서버의 user 라우터로
-        const { access_token } = res.data;
-        localStorage.setItem('access_token', access_token);
-      })
-      .then(() => sendKakaoTokenToServer(localStorage.access_token));
+        const { access_token } = res.data; // jwt아님. 카카오 엑세스 토큰. 서버로 다시 보내서 서버한테 jwt 다시 받아야 함
+        sendKakaoTokenToServer(access_token);
+      });
   };
 
   useEffect(() => {

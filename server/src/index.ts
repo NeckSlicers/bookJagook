@@ -36,7 +36,7 @@ app.use(PATH.MYBOOKLIST.ROOT, mybookListRouter);
 app.use(PATH.MYBOOK.ROOT, mybookRouter);
 app.use(PATH.WISHLIST.ROOT, wishListRouter);
 app.use(PATH.MYBOOK.ROOT, reportRouter);
-app.use('/auth', authRouter);
+app.use('/auth/kakao', authRouter);
 
 app.listen(PORT, async () => {
   const response = await mongoose.connect(process.env.MONGODB_KEY as string);

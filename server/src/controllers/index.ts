@@ -3,6 +3,7 @@ import { bookListController } from './bookListController';
 import { bookController } from './bookController';
 import { wishiListController } from './wishListController';
 import { reportController } from './reportController';
+import { authController } from './authController';
 
 export {
   userController,
@@ -10,4 +11,5 @@ export {
   bookController,
   wishiListController,
   reportController,
+  authController,
 };

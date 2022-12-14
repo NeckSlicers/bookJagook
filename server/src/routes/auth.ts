@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import express from 'express';
 // import { PATH } from '../api';
-import { accessToken, callback } from '../controllers';
+import { authController } from '../controllers';
 
 const router = express();
 
-router.post('/accesstoken', accessToken);
+router.post('/', authController.getKakaoUserInfo);
 
 export { router as authRouter };
